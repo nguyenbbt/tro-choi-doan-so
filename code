@@ -1,0 +1,67 @@
+#include <iostream>
+#include<cmath>
+#include <cstdlib>
+#include <ctime>
+#include <chrono>
+#include <thread>
+using namespace std;
+int generateRandomNumber(int min, int max) {
+    return min + rand() % (max - min + 1);
+}
+void delay(int milliseconds) {
+   this_thread::sleep_for(chrono::milliseconds(milliseconds));
+}
+int main()
+{
+    srand(static_cast<unsigned int>(time(0)));
+
+    int min = 1;
+    int max = 20;
+    int so,dokho,gan;
+    int random=generateRandomNumber(min,max);
+    cout<<"CHAO MUNG TOI TRO CHOI DOAN SO 1.01"<<endl;
+     delay(1000);
+    cout<<"******************************"<<endl;
+     delay(1000);
+    cout<<"Hay chon do kho:"<<endl;
+    cout<<"1:De( 5 luot doan )"<<endl;
+    delay(1000);
+    cout<<"2:Kho( 3 luot doan )"<<endl;
+    while(dokho!=1 && dokho!=2){
+        cout<<"Do Kho: ";
+        cin>>dokho;
+        if(dokho==1){
+            gan=5;
+        }
+        else{
+            gan=3;
+        }
+    }
+    cout<<"Hay chon so tu 1 toi 20"<<endl;
+    while(so!= random&&gan!=0){
+        cin>>so;
+        gan--;
+        if(so < random){
+            cout<<"so random lon hon"<<endl;
+        }
+        else if(so>random)
+            {
+            cout<<"so random nho hon"<<endl;
+        }
+    }
+    for(int i=1;i<=25;i++){
+        cout<<"*";
+        delay(50);
+    }
+    cout<<endl;
+    if(so== random){
+        cout<<"BAN DA THANG "<<endl;
+    }
+    else{
+        cout<<"BAN DA THUA "<<endl;
+        for(int i=1;i<=100;i++){
+        cout<<"TU SAT DI"<<endl;
+         delay(1000);
+    }
+    }
+}
